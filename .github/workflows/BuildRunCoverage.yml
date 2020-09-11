@@ -25,10 +25,6 @@ jobs:
       with:
         dotnet-version: 3.1.101
 
-    # Restore Dependencies
-    - name: Install dependencies
-      run: dotnet restore
-
     # Build .NET application
     - name: Build with dotnet
       run: dotnet build --configuration Release
