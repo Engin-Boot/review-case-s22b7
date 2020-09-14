@@ -1,15 +1,15 @@
 name: Build and Run
  
-on: 
-    push:
-        branches: [master]
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
  
 jobs:
   build:
  
     runs-on: windows-latest
-    env:
-      SolutionName: Sender.sln
  
     steps:
     - name: Checkout
