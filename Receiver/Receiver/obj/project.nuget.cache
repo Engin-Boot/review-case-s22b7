@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "WRSVrE7HoOr91dQYPYDrU+y93RZXJtAARTEPaooB7OT0peQMCa2VbCeGQlyN2Xv08ax0lzRuzREf4gaeyWZeVw==",
+  "dgSpecHash": "XCesv9Eq6tqrRdG7QxWb+bkGi47uwBfuw/IpEwd5PqWl/kq5wM9kv2TnuYVZgrH0k8B29zm8ZaMHAmdtNR//0A==",
   "success": true,
-  "projectFilePath": "D:\\BootCamp\\temp\\Receiver\\Receiver\\Receiver.csproj",
+  "projectFilePath": "D:\\BootCamp\\review-case-s22b7\\Receiver\\Receiver\\Receiver.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

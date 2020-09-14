@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\BootCamp\\temp\\Receiver\\Receiver\\Receiver.csproj",
+      "projectUniqueName": "D:\\BootCamp\\review-case-s22b7\\Receiver\\Receiver\\Receiver.csproj",
       "projectName": "Receiver",
-      "projectPath": "D:\\BootCamp\\temp\\Receiver\\Receiver\\Receiver.csproj",
+      "projectPath": "D:\\BootCamp\\review-case-s22b7\\Receiver\\Receiver\\Receiver.csproj",
       "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-      "outputPath": "D:\\BootCamp\\temp\\Receiver\\Receiver\\obj\\",
+      "outputPath": "D:\\BootCamp\\review-case-s22b7\\Receiver\\Receiver\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

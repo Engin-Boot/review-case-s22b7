@@ -5650,11 +5650,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\BootCamp\\temp\\Receiver\\ReceiverTest\\ReceiverTest.csproj",
+      "projectUniqueName": "D:\\BootCamp\\review-case-s22b7\\Receiver\\ReceiverTest\\ReceiverTest.csproj",
       "projectName": "ReceiverTest",
-      "projectPath": "D:\\BootCamp\\temp\\Receiver\\ReceiverTest\\ReceiverTest.csproj",
+      "projectPath": "D:\\BootCamp\\review-case-s22b7\\Receiver\\ReceiverTest\\ReceiverTest.csproj",
       "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-      "outputPath": "D:\\BootCamp\\temp\\Receiver\\ReceiverTest\\obj\\",
+      "outputPath": "D:\\BootCamp\\review-case-s22b7\\Receiver\\ReceiverTest\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
