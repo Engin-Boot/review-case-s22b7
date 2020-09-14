@@ -1,0 +1,10 @@
+# Binary and Objects of Projects
+**/bin/*
+**/obj/*
+
+# Visual Studio cache/options directory
+.vs/
+
+# Packages of Project
+packages/
+
