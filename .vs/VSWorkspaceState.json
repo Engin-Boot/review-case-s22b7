@@ -1,9 +1,7 @@
 {
   "ExpandedNodes": [
     "",
-    "\\.github",
-    "\\.github\\Workflow"
+    "\\.github"
   ],
-  "SelectedNode": "\\.github\\Workflow\\BuildRunCoverage.yml",
   "PreviewInSolutionExplorer": false
 }

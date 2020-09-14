@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\BootCamp\\Demo\\Demo-case\\Receiver\\Receiver.csproj": {}
+    "D:\\BootCamp\\temp\\Receiver\\Receiver\\Receiver.csproj": {}
   },
   "projects": {
-    "D:\\BootCamp\\Demo\\Demo-case\\Receiver\\Receiver.csproj": {
+    "D:\\BootCamp\\temp\\Receiver\\Receiver\\Receiver.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\BootCamp\\Demo\\Demo-case\\Receiver\\Receiver.csproj",
+        "projectUniqueName": "D:\\BootCamp\\temp\\Receiver\\Receiver\\Receiver.csproj",
         "projectName": "Receiver",
-        "projectPath": "D:\\BootCamp\\Demo\\Demo-case\\Receiver\\Receiver.csproj",
+        "projectPath": "D:\\BootCamp\\temp\\Receiver\\Receiver\\Receiver.csproj",
         "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-        "outputPath": "D:\\BootCamp\\Demo\\Demo-case\\Receiver\\obj\\",
+        "outputPath": "D:\\BootCamp\\temp\\Receiver\\Receiver\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
