@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Receiver
 {
-    class ReadConsoleHandler
+    public class ReadConsoleHandler
    {
        public List<String> ReadFromConsole()
         {
