@@ -58,6 +58,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CsvFileReader.cs" />
+    <Compile Include="PathExistance.cs" />
+    <Compile Include="Column_Number.cs" />
+    <Compile Include="SeriesOfWords.cs" />
+    <Compile Include="StartStopColumnNumbers.cs" />
+    <Compile Include="Column_Filter.cs" />
     <Compile Include="Sender.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
