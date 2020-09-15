@@ -1,11 +1,10 @@
 using System;
 using Xunit;
 using Sender;
-using System.IO;
 
-namespace Sender_UnitTest
+namespace Sender_Test
 {
-    public class SenderTest
+    public class Sender_Test
     {
         [Fact]
         public void TestFilePathExists()
