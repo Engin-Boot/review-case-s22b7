@@ -11,6 +11,7 @@ namespace Receiver.Test
         ReadConsoleHandler reader = new ReadConsoleHandler();
         CSVwriteHandler writer = new CSVwriteHandler();
         string fileName = "Example.csv";
+        Dictionary<string, int> wordmap = new Dictionary<string, int>() { { "Hello", 2 }, { "Philips", 1 }, { "World", 2 } };
 
 
         [Fact]
@@ -18,32 +19,33 @@ namespace Receiver.Test
         {
             List<String> testList = new List<String>() { "Hello", "World", "Philips", "Hello", "Philips", "and" };
             Dictionary<String,int>outcome = reader.ListToWordCountMap(testList);
-            Assert.True(outcome["Hello"] == 2);
+            Assert.Equal(wordmap["Hello"],outcome["Hello"]);
         }
         [Fact]
-        public void WhenFileDoesNotExistThenCreateNewFile()
+        public void WhenFileArgumentIsHealthyThenCreateNewFile()
         {
-            if (File.Exists(getPath(fileName))) 
-                File.Delete(getPath(fileName));
             writer.FilePathGen(fileName);
             Assert.True(File.Exists(getPath(fileName)));
+            Assert.Equal(0, new FileInfo(getPath(fileName)).Length);
         }
         [Fact]
-        public void WhenFileExistThenDeleteOldCreateNewFile()
+        public void WhenFileisCorruptedThenThrowException()
         {
-            WriteinFile();
-            writer.FilePathGen(fileName);
-            Assert.True(File.Exists(getPath(fileName)));
-            Assert.True(File.ReadAllLines(getPath(fileName)) == null);
+            Assert.Throws<ApplicationException>(() => writer.FilePathGen(""));
         }
 
-
-        private void WriteinFile()
+        [Fact]
+        public void WhenFileStreamFailsThenThrowException()
         {
-            StreamWriter file = new StreamWriter(@getPath(fileName), false);
-            file.WriteLine("Test line");
+            Assert.Throws<ApplicationException>(() => writer.WriteToCSV(wordmap,""));
         }
 
+        [Fact]
+        public void WhenFileStreamSucceedsThenWriteOnFile()
+        {
+            writer.WriteToCSV(wordmap, getPath(fileName));
+            Assert.Equal("Hello,2",File.ReadAllLines(getPath(fileName))[0]);
+        }
         private static string getPath(string fileName)
         {
             return Path.Combine(Directory.GetCurrentDirectory(), fileName);

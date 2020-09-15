@@ -26,12 +26,18 @@ namespace Receiver
         public string FilePathGen(string writeFile)
         {
             string file = Path.Combine(Directory.GetCurrentDirectory(), writeFile);
-            if (File.Exists(file))
-                File.Delete(file);
-            File
-                .Create(file)
-                .Close();
-            Console.WriteLine("New file created successfully...");
+            try
+            {
+                File
+                  .Create(file)
+                  .Close();
+                Console.WriteLine("New file created successfully...");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                throw new ApplicationException("error", e);
+            }
             return file;
         }
     }
