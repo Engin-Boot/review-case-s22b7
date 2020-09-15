@@ -5,10 +5,10 @@
 
         public static void Main(string[] args)
         {
-            CSVwriteHandler writer = new CSVwriteHandler();
+            CsvWriteHandler writer = new CsvWriteHandler();
             ReadConsoleHandler reader = new ReadConsoleHandler();
             writer
-                .WriteToCSV(
+                .WriteToCsv(
                  reader
                  .ListToWordCountMap(
                   reader.ReadFromConsole()),

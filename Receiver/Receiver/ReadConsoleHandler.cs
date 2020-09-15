@@ -7,21 +7,21 @@ namespace Receiver
     {
         public List<String> ReadFromConsole()
         {
-            string ConsoleEntry;
-            List<String> ConsoleContent = new List<String>();
-            while (!string.IsNullOrEmpty(ConsoleEntry = Console.ReadLine()))
-                ConsoleContent.Add(ConsoleEntry);
-            return ConsoleContent;
+            string consoleEntry;
+            List<String> consoleContent = new List<String>();
+            while (!string.IsNullOrEmpty(consoleEntry = Console.ReadLine()))
+                consoleContent.Add(consoleEntry);
+            return consoleContent;
         }
 
         public Dictionary<String, int> ListToWordCountMap(List<String> wordlist)
         {
             Dictionary<string, int> wordCount = new Dictionary<string, int>();
-            for (int i = 0; i < wordlist.Count; i++)
+            foreach (string word in wordlist)
             {
-                if (wordCount.ContainsKey(wordlist[i]))
-                      wordCount[wordlist[i]]++;
-                else  wordCount.Add(wordlist[i], 1);
+                if (wordCount.ContainsKey(word))
+                      wordCount[word]++;
+                else  wordCount.Add(word, 1);
             }
             return wordCount;
         }

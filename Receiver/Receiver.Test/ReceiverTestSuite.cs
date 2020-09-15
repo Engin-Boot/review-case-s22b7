@@ -8,7 +8,7 @@ namespace Receiver.Test
     public class ReceiverTestSuite
     {
         ReadConsoleHandler reader = new ReadConsoleHandler();
-        CSVwriteHandler writer = new CSVwriteHandler();
+        CsvWriteHandler writer = new CsvWriteHandler();
         string fileName = "Example.csv";
         Dictionary<string, int> wordmap = new Dictionary<string, int>() { { "Hello", 2 }, { "Philips", 1 }, { "World", 2 } };
 
@@ -35,13 +35,13 @@ namespace Receiver.Test
         [Fact]
         public void WhenFileStreamFailsThenThrowException()
         {
-            Assert.Throws<ApplicationException>(() => writer.WriteToCSV(wordmap, ""));
+            Assert.Throws<ApplicationException>(() => writer.WriteToCsv(wordmap, ""));
         }
 
         [Fact]
         public void WhenFileStreamSucceedsThenWriteOnFile()
         {
-            writer.WriteToCSV(wordmap, getPath(fileName));
+            writer.WriteToCsv(wordmap, getPath(fileName));
             Assert.Equal("Hello,2", File.ReadAllLines(getPath(fileName))[0]);
         }
         private static string getPath(string fileName)

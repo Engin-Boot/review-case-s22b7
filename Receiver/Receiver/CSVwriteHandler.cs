@@ -4,13 +4,13 @@ using System.IO;
 
 namespace Receiver
 {
-    public class CSVwriteHandler
+    public class CsvWriteHandler
     {
-        public void WriteToCSV(Dictionary<String, int> record, string path)
+        public void WriteToCsv(Dictionary<String, int> record, string path)
         {
             try
             {
-                using (StreamWriter file = new StreamWriter(@path, false))
+                using (StreamWriter file = new StreamWriter(path, false))
                 {
                     foreach (var item in record)
                         file.WriteLine(item.Key + "," + item.Value);
