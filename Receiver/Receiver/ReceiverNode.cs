@@ -18,7 +18,7 @@ namespace Receiver
                  reader
                  .ListToWordCountMap(
                   reader.ReadFromConsole()),
-                 writer.FilePathGen("Reader.csv"));
+                  writer.FilePathGen("Reader.csv"));
         }
     }
 }
