@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Linq;
-using System.IO;
-using System.Threading;
+using System.Linq.Expressions;
 
 namespace Receiver
 {
@@ -9,7 +8,12 @@ namespace Receiver
     {
         static void Main(string[] args)
         {
-            ConsoleToCSVformat(ReadFromConsole());     
+            string[] value = ReadFromConsole();
+
+            for(int i = 0 ; i <= value.Length ; i++)
+            {
+                Console.WriteLine(value[i]);
+            }
         }
 
         public static string[] ReadFromConsole()
@@ -24,34 +28,5 @@ namespace Receiver
             }
             return ConsoleContent;
         }
-          public static void ConsoleToCSVformat(String[] data)
-        {
-            ReaderStruct record = new ReaderStruct();
-            for (int i=0; i <= data.Length; i++)
-            {
-                record.time = data[i];
-                record.comment = data[++i];
-                WriteToCSV(record);
-            }           
-        }
-
-        static void WriteToCSV(ReaderStruct record)
-        {
-            string path = "ReaderCSV.csv";
-            try
-            {
-                using (StreamWriter file = new StreamWriter(@path, true))
-                {
-                    file.WriteLine(record.time + "," + record.comment);
-                }
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-
-            }
-        }
-    }
-
-
+   }
 }
