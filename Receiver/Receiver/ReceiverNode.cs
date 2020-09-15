@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 
@@ -8,25 +9,33 @@ namespace Receiver
     {
         static void Main(string[] args)
         {
-            string[] value = ReadFromConsole();
+            ListToWordCountMap(
+                ReadFromConsole()
+                );
 
-            for(int i = 0 ; i <= value.Length ; i++)
-            {
-                Console.WriteLine(value[i]);
-            }
         }
 
-        public static string[] ReadFromConsole()
+        public static List<String> ReadFromConsole()
         {
             string ConsoleEntry;
-            string[] ConsoleContent = { };
-            ConsoleEntry = Console.ReadLine();
-            while (!string.IsNullOrEmpty(ConsoleEntry))
-            {
-                ConsoleContent.Append(ConsoleEntry);
-                ConsoleEntry = Console.ReadLine();
-            }
+            List<String> ConsoleContent = new List<String>();
+            while (!string.IsNullOrEmpty(ConsoleEntry = Console.ReadLine()))
+                ConsoleContent.Add(ConsoleEntry);
             return ConsoleContent;
+        }
+
+        public static Dictionary<String,int> ListToWordCountMap (List<String> wordlist)
+        {
+            Dictionary<string, int> wordCount = new Dictionary<string, int>();
+
+            for (int i=0; i<= wordlist.Count; i++)
+            {
+                if (wordCount.ContainsKey(wordlist[i]))
+                    wordCount[wordlist[i]]++;
+                else
+                    wordCount.Add(wordlist[i], 1);
+            }
+            return wordCount;
         }
    }
 }
