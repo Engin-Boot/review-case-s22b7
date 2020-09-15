@@ -7,9 +7,17 @@ namespace Sender
     {
         public static void ConvertCommentsToSeriesOfWords(string path, string Column_Number)
         {
+
             int column_number = Convert.ToInt32(Column_Number);
             string[] lines = System.IO.File.ReadAllLines(path);
+            LineLoop.ApplyLineLoop(lines, column_number);
+        }
+    }
 
+    public class LineLoop
+    {
+        public static void ApplyLineLoop(string[] lines, int column_number)
+        {
             for (int lineNumber = 1; lineNumber < lines.Length; lineNumber++)
             {
                 string line = lines[lineNumber];

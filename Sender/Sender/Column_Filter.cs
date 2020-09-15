@@ -15,13 +15,22 @@ namespace Sender
             {
                 string reviewComment = columns[columnNumber];
 
-                string[] words = reviewComment.Split(' ');
+                string[] words = ConvertLineToSeriesOfWords.ConvertLine_ToSeriesOfWords(reviewComment);
 
                 foreach (var word in words)
                 {
                     System.Console.WriteLine(word);
                 }
             }
+        }
+    }
+
+    public class ConvertLineToSeriesOfWords
+    {
+        public static string[] ConvertLine_ToSeriesOfWords(string reviewComment)
+        {
+            string[] words = reviewComment.Split(' ');
+            return words;
         }
     }
 }
