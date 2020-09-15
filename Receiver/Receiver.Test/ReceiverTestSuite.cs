@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using Receiver;
 using Xunit;
 
 namespace Receiver.Test
@@ -13,13 +12,12 @@ namespace Receiver.Test
         string fileName = "Example.csv";
         Dictionary<string, int> wordmap = new Dictionary<string, int>() { { "Hello", 2 }, { "Philips", 1 }, { "World", 2 } };
 
-
         [Fact]
         public void GivenListOfLinesThenReturnsWordCountMap()
         {
             List<String> testList = new List<String>() { "Hello", "World", "Philips", "Hello", "Philips", "and" };
-            Dictionary<String,int>outcome = reader.ListToWordCountMap(testList);
-            Assert.Equal(wordmap["Hello"],outcome["Hello"]);
+            Dictionary<String, int> outcome = reader.ListToWordCountMap(testList);
+            Assert.Equal(wordmap["Hello"], outcome["Hello"]);
         }
         [Fact]
         public void WhenFileArgumentIsHealthyThenCreateNewFile()
@@ -37,18 +35,18 @@ namespace Receiver.Test
         [Fact]
         public void WhenFileStreamFailsThenThrowException()
         {
-            Assert.Throws<ApplicationException>(() => writer.WriteToCSV(wordmap,""));
+            Assert.Throws<ApplicationException>(() => writer.WriteToCSV(wordmap, ""));
         }
 
         [Fact]
         public void WhenFileStreamSucceedsThenWriteOnFile()
         {
             writer.WriteToCSV(wordmap, getPath(fileName));
-            Assert.Equal("Hello,2",File.ReadAllLines(getPath(fileName))[0]);
+            Assert.Equal("Hello,2", File.ReadAllLines(getPath(fileName))[0]);
         }
         private static string getPath(string fileName)
         {
             return Path.Combine(Directory.GetCurrentDirectory(), fileName);
-        } 
+        }
     }
 }

@@ -20,7 +20,6 @@ namespace Receiver
             {
                 Console.WriteLine(e.Message);
                 throw new ApplicationException("error", e);
-
             }
         }
         public string FilePathGen(string writeFile)
