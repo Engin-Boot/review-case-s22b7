@@ -6,7 +6,7 @@ namespace Receiver
 {
     public class CsvWriteHandler
     {
-        public void WriteToCsv(Dictionary<String, int> record, string path)
+        public static void WriteToCsv(Dictionary<String, int> record, string path)
         {
             try
             {
@@ -21,7 +21,7 @@ namespace Receiver
                 ExceptionHandler(e);
             }
         }
-        public string FilePathGen(string writeFile)
+        public static string FilePathGen(string writeFile)
         {
             string file = Path.Combine(Directory.GetCurrentDirectory(), writeFile);
             try

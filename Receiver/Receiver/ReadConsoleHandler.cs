@@ -5,7 +5,7 @@ namespace Receiver
 {
     public class ReadConsoleHandler
     {
-        public List<String> ReadFromConsole()
+        public static List<String> ReadFromConsole()
         {
             string consoleEntry;
             List<String> consoleContent = new List<String>();
@@ -14,7 +14,7 @@ namespace Receiver
             return consoleContent;
         }
 
-        public Dictionary<String, int> ListToWordCountMap(List<String> wordlist)
+        public static Dictionary<String, int> ListToWordCountMap(List<String> wordlist)
         {
             Dictionary<string, int> wordCount = new Dictionary<string, int>();
             foreach (string word in wordlist)

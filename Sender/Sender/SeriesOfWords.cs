@@ -6,27 +6,28 @@ namespace Sender
     {
         public static void ConvertCommentsToSeriesOfWords(string path, string Column_Number)
         {
-
-            int column_number = Convert.ToInt32(Column_Number);
-            string[] lines = System.IO.File.ReadAllLines(path);
-            LineLoop.ApplyLineLoop(lines, column_number);
+            LineLoop
+                .ApplyLineLoop(
+                 System.IO.File.ReadAllLines(path),
+                 Convert.ToInt32(Column_Number));
         }
     }
 
-    public class LineLoop
+    class LineLoop
     {
         public static void ApplyLineLoop(string[] lines, int column_number)
         {
-            for (int lineNumber = 1; lineNumber < lines.Length; lineNumber++)
+            int StartColumnNumber, StopColumnNumber;
+            foreach (string line in lines)
             {
-                string line = lines[lineNumber];
-                string[] columns = line.Split(',');
-                int columnsCount = columns.Length;
-                int[] Start_StopColumnNumber = StartStopColumnNumbers.ReturnStartAndStopColumnNumbers(column_number, columnsCount);
-                int StartColumnNumber = Start_StopColumnNumber[0];
-                int StopColumnNumber = Start_StopColumnNumber[1];
-                Column_Filter.ApplyColumnFilter(line, StartColumnNumber, StopColumnNumber);
+                StartStopColumnNumbers
+                    .ReturnStartAndStopColumnNumbers(column_number, (line.Split(',')).Length,
+                        out StartColumnNumber, out StopColumnNumber);
+                Column_Filter
+                    .ApplyColumnFilter(line, StartColumnNumber, StopColumnNumber);
             }
         }
-    }
+
+
+        }
 }

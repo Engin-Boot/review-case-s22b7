@@ -2,26 +2,23 @@
 {
     public class StartStopColumnNumbers
     {
-        public static int[] ReturnStartAndStopColumnNumbers(int ColumnNumber, int ColumnCount)
+        public static void ReturnStartAndStopColumnNumbers(int ColumnNumber, int ColumnCount, out int StartNum , out int StopNum)
         {
-            int[] start_stopColumnNumber = new int[2];
             if (ColumnNumber == 0)
             {
-                start_stopColumnNumber[0] = 0;
-                start_stopColumnNumber[1] = ColumnCount;
-                return start_stopColumnNumber;
+                StartNum = 0;
+                StopNum = ColumnCount;
+                
             }
             else if (ColumnNumber == 1)
             {
-                start_stopColumnNumber[0] = 0;
-                start_stopColumnNumber[1] = 1;
-                return start_stopColumnNumber;
+                StartNum = 0;
+                StopNum = 1;
             }
             else
             {
-                start_stopColumnNumber[0] = 1;
-                start_stopColumnNumber[1] = ColumnCount;
-                return start_stopColumnNumber;
+                StartNum = 1;
+                StopNum = ColumnCount;
             }
         }
     }

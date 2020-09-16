@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 
 namespace Sender
 {
@@ -6,29 +7,43 @@ namespace Sender
     {
         public static bool ReadCsvFile(string path)
         {
-            bool pathExists = PathExistance.CheckPathExistOrNot(path);
-            bool val = false;
-            if (pathExists == true)
+            if (CheckPathExistOrNot(path))
             {
                 Console.WriteLine("Enter 0 to get Series of Words for complete CSV file and Enter 1 for Column filter");
-                String UserInput = Console.ReadLine();
-                if (UserInput == "0")
-                {
-                    SeriesOfWords.ConvertCommentsToSeriesOfWords(path, "0");
-                }
-                else
-                {
-                    string ColumnNumber = Column_Number.TakeColumnNumberForColumnFilter(UserInput);
-                    SeriesOfWords.ConvertCommentsToSeriesOfWords(path, ColumnNumber);
-                }
-                val = true;
-                return val;
+                GetUserInputForFilter(path);
+                return true;
             }
             else
-            {
-                return val;
-            }
+                return false;
+        }
 
+        private static void GetUserInputForFilter(string path)
+        {
+            string UserInput;
+            if ((UserInput = Console.ReadLine()) == "0")
+                SeriesOfWords
+                    .ConvertCommentsToSeriesOfWords(path, "0");
+            else
+            {
+                SeriesOfWords
+                    .ConvertCommentsToSeriesOfWords(path,
+                        TakeColumnNumberForColumnFilter());
+            }
+        }
+
+        private static string TakeColumnNumberForColumnFilter()
+        {
+            Console.WriteLine("Enter 1 for Date & Time column filter and 2 for Comments Column filter");
+            return Console.ReadLine();
+        }
+        private static bool CheckPathExistOrNot(string path)
+        {
+            if (File.Exists(path))
+                return true;
+            else {
+                Console.WriteLine("File Not Found");
+                return false;
+            }
         }
     }
 }

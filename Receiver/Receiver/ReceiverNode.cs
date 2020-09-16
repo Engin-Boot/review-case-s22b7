@@ -2,17 +2,14 @@
 {
     class ReceiverNode
     {
-
-        public static void Main()
+        static void Main()
         {
-            CsvWriteHandler writer = new CsvWriteHandler();
-            ReadConsoleHandler reader = new ReadConsoleHandler();
-            writer
+            CsvWriteHandler
                 .WriteToCsv(
-                 reader
+                 ReadConsoleHandler
                  .ListToWordCountMap(
-                  reader.ReadFromConsole()),
-                  writer.FilePathGen("Reader.csv"));
+                  ReadConsoleHandler.ReadFromConsole()),
+                  CsvWriteHandler.FilePathGen("Reader.csv"));
         }
     }
 }
