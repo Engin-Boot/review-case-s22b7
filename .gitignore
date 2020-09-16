@@ -1,9 +1,6 @@
 # Visual Studio cache/options directory
 .vs/
 
-# Packages of Project
-[Pp]ackages/
-
 #Project Build files
 [Dd]ebug/
 [Dd]ebugPublic/
