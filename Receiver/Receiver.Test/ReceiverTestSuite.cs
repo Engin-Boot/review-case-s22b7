@@ -23,8 +23,8 @@ namespace Receiver.Test
         public void WhenFileArgumentIsHealthyThenCreateNewFile()
         {
             writer.FilePathGen(fileName);
-            Assert.True(File.Exists(getPath(fileName)));
-            Assert.Equal(0, new FileInfo(getPath(fileName)).Length);
+            Assert.True(File.Exists(GetPath(fileName)));
+            Assert.Equal(0, new FileInfo(GetPath(fileName)).Length);
         }
         [Fact]
         public void WhenFileisCorruptedThenThrowException()
@@ -41,10 +41,10 @@ namespace Receiver.Test
         [Fact]
         public void WhenFileStreamSucceedsThenWriteOnFile()
         {
-            writer.WriteToCsv(wordmap, getPath(fileName));
-            Assert.Equal("Hello,2", File.ReadAllLines(getPath(fileName))[0]);
+            writer.WriteToCsv(wordmap, GetPath(fileName));
+            Assert.Equal("Hello,2", File.ReadAllLines(GetPath(fileName))[0]);
         }
-        private static string getPath(string fileName)
+        private static string GetPath(string fileName)
         {
             return Path.Combine(Directory.GetCurrentDirectory(), fileName);
         }

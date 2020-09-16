@@ -1,10 +1,19 @@
-# Binary and Objects of Projects
-**/bin/*
-**/obj/*
-
 # Visual Studio cache/options directory
 .vs/
 
 # Packages of Project
-packages/
+[Pp]ackages/
 
+#Project Build files
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/

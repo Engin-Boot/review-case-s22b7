@@ -3,7 +3,7 @@
     class ReceiverNode
     {
 
-        public static void Main(string[] args)
+        public static void Main()
         {
             CsvWriteHandler writer = new CsvWriteHandler();
             ReadConsoleHandler reader = new ReadConsoleHandler();
