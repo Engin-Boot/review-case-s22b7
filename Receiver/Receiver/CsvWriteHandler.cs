@@ -18,8 +18,7 @@ namespace Receiver
             }
             catch (Exception e)
             {
-                Console.WriteLine(e.Message);
-                throw new ApplicationException("error", e);
+                ExceptionHandler(e);
             }
         }
         public string FilePathGen(string writeFile)
@@ -34,10 +33,15 @@ namespace Receiver
             }
             catch (Exception e)
             {
-                Console.WriteLine(e.Message);
-                throw new ApplicationException("error", e);
+                ExceptionHandler(e);
             }
             return file;
+        }
+
+        private static void ExceptionHandler(Exception e)
+        {
+            Console.WriteLine(e.Message);
+            throw new ApplicationException("error", e);
         }
     }
 }

@@ -20,8 +20,8 @@ namespace Receiver
             foreach (string word in wordlist)
             {
                 if (wordCount.ContainsKey(word))
-                      wordCount[word]++;
-                else  wordCount.Add(word, 1);
+                    wordCount[word]++;
+                else wordCount.Add(word, 1);
             }
             return wordCount;
         }
