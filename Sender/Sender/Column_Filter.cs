@@ -7,10 +7,11 @@ namespace Sender
     {
         public static void ApplyColumnFilter(string line, int startcolumn, int stopcolumn)
         {
+            string[] ColumnElements = BreakLineToItems(line, ',');
             for (int columnNumber = startcolumn; columnNumber < stopcolumn; columnNumber++)
             {
                 // Break CSV to Columns,select each column, then Break line to words
-                string[] ColumnElements = BreakLineToItems(line, ',');
+                
                 string[] words = BreakLineToItems(
                                     ColumnElements[columnNumber], ' ');
                 for (int i =0; i < words.Length; i++)

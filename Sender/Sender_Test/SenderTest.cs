@@ -1,9 +1,9 @@
 using Sender;
 using Xunit;
 
-namespace Sender_Test
+namespace Sender.Test
 {
-    public class Sender_Test
+    public class SenderTest
     {
         string path = "review-report.cs";
 
@@ -16,13 +16,13 @@ namespace Sender_Test
         [Fact]
         public void TestWhenColumnNumberIsGivenThenReturnStartStopColumnNumber()
         {
-            int StartNum, StopNum;
-            StartStopColumnNumbers.ReturnStartAndStopColumnNumbers(1, 2,out StartNum,out StopNum);
-                Assert.True(StartNum == 0 && StopNum == 1);
+            int startNum, stopNum;
+            StartStopColumnNumbers.ReturnStartAndStopColumnNumbers(1, 2,out startNum,out stopNum);
+                Assert.True(startNum == 0 && stopNum == 1);
         }
 
         [Fact]
-        public void TestWhenCommentISGivenAsInputReturnSeriesOfWords()
+        public void TestWhenCommentIsGivenAsInputReturnSeriesOfWords()
         {
             string Comment = "No new Comment";
             Assert.Equal("new",Column_Filter.BreakLineToItems(Comment, ' ')[1]);

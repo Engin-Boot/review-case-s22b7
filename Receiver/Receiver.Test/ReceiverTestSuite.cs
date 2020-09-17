@@ -7,8 +7,8 @@ namespace Receiver.Test
 {
     public class ReceiverTestSuite
     {
-        string fileName = "Example.csv";
-        Dictionary<string, int> wordmap = new Dictionary<string, int>() { { "Hello", 2 }, { "Philips", 1 }, { "World", 2 } };
+        readonly string fileName = "Example.csv";
+        readonly Dictionary<string, int> wordmap = new Dictionary<string, int>() { { "Hello", 2 }, { "Philips", 1 }, { "World", 2 } };
 
         [Fact]
         public void GivenListOfLinesThenReturnsWordCountMap()
