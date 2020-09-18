@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Xml.Linq;
 
 namespace Receiver
 {
@@ -9,7 +11,7 @@ namespace Receiver
         {
             string consoleEntry;
             List<String> consoleContent = new List<String>();
-            while (!string.IsNullOrEmpty(consoleEntry = Console.ReadLine()))
+            while ((consoleEntry = Console.ReadLine()) != null)
                 consoleContent.Add(consoleEntry);
             return consoleContent;
         }
@@ -24,6 +26,17 @@ namespace Receiver
                 else wordCount.Add(word, 1);
             }
             return wordCount;
+        }
+
+        public static List<String> RemoveStopWords(List<String> wordlist)
+        {
+            XDocument xmlDoc = XDocument.Load
+                (@"C:\\Users\320088165\OneDrive - Philips\Documents\Bootcamp\review-case-s22b7\Receiver\Receiver\StopWords.xml");
+            List<String> StopList = xmlDoc.Root.Elements("item")
+                                       .Select(element => element.Value)
+                                       .ToList();
+            wordlist.RemoveAll(x => StopList.Contains(x));
+            return wordlist;
         }
     }
 }

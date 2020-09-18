@@ -1,4 +1,6 @@
-﻿namespace Receiver
+﻿using System.Configuration;
+
+namespace Receiver
 {
     class ReceiverNode
     {
@@ -8,8 +10,9 @@
                 .WriteToCsv(
                  ReadConsoleHandler
                  .ListToWordCountMap(
-                  ReadConsoleHandler.ReadFromConsole()),
-                  CsvWriteHandler.FilePathGen("Reader.csv"));
+                  ReadConsoleHandler.RemoveStopWords(
+                  ReadConsoleHandler.ReadFromConsole())),
+                  CsvWriteHandler.FilePathGen(ConfigurationManager.AppSettings.Get("fileName")));
         }
     }
 }
