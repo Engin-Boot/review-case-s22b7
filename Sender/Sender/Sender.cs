@@ -1,11 +1,10 @@
-﻿using System;
-using System.IO;
+﻿
 
 namespace Sender
 {
     class Sender
     {
-        static void Main(string[] args)
+        static void Main()
         {
             //Console.WriteLine("Enter File path");
             //string path = Console.ReadLine();

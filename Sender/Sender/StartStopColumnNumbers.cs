@@ -1,33 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace Sender
 {
     public class StartStopColumnNumbers
     {
-        public static int[] ReturnStartAndStopColumnNumbers(int ColumnNumber, int ColumnCount)
+        public static int[] ReturnStartAndStopColumnNumbers(int columnNumber, int columnCount)
         {
-            int[] start_stopColumnNumber = new int[2];
-            if (ColumnNumber == 0)
+            int[] startstopColumnNumber = new int[2];
+            if (columnNumber == 0)
             {
-                start_stopColumnNumber[0] = 0;
-                start_stopColumnNumber[1] = ColumnCount;
-                return start_stopColumnNumber;
+                startstopColumnNumber[0] = 0;
+                startstopColumnNumber[1] = columnCount;
+                return startstopColumnNumber;
             }
-            else if (ColumnNumber == 1)
+            else if (columnNumber == 1)
             {
-                start_stopColumnNumber[0] = 0;
-                start_stopColumnNumber[1] = 1;
-                return start_stopColumnNumber;
+                startstopColumnNumber[0] = 0;
+                startstopColumnNumber[1] = 1;
+                return startstopColumnNumber;
             }
             else
             {
-                start_stopColumnNumber[0] = 1;
-                start_stopColumnNumber[1] = ColumnCount;
-                return start_stopColumnNumber;
+                startstopColumnNumber[0] = 1;
+                startstopColumnNumber[1] = columnCount;
+                return startstopColumnNumber;
             }
         }
     }

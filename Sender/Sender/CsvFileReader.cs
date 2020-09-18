@@ -1,5 +1,5 @@
 ﻿using System;
-using System.IO;
+
 
 namespace Sender
 {
@@ -9,26 +9,23 @@ namespace Sender
         {
             bool pathExists = PathExistance.CheckPathExistOrNot(path);
             bool val = false;
-            if (pathExists == true)
+            if (pathExists)
             {
                 Console.WriteLine("Enter 0 to get Series of Words for complete CSV file and Enter 1 for Column filter");
-                String UserInput = Console.ReadLine();
-                if (UserInput == "0")
+                String userInput = Console.ReadLine();
+
+                if (userInput == "0")
                 {
                     SeriesOfWords.ConvertCommentsToSeriesOfWords(path, "0");
                 }
                 else
                 {
-                    string ColumnNumber = Column_Number.TakeColumnNumberForColumnFilter(UserInput);
-                    SeriesOfWords.ConvertCommentsToSeriesOfWords(path, ColumnNumber);
+                    string columnNumbers = ColumnNumber.TakeColumnNumberForColumnFilter();
+                    SeriesOfWords.ConvertCommentsToSeriesOfWords(path, columnNumbers);
                 }
                 val = true;
-                return val;
             }
-            else
-            {
-                return val;
-            }
+            return val;
 
         }
     }

@@ -9,7 +9,7 @@ namespace Receiver
         {
             string consoleEntry;
             List<String> consoleContent = new List<String>();
-            while (!string.IsNullOrEmpty(consoleEntry = Console.ReadLine()))
+            while ((consoleEntry = Console.ReadLine())!=null)
                 consoleContent.Add(consoleEntry);
             return consoleContent;
         }

@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\BootCamp\\review-case-s22b7\\Receiver\\Receiver\\Receiver.csproj": {}
+    "C:\\Users\\HP\\Desktop\\Git_CaseStudy_Final\\review-case-s22b7\\Receiver\\Receiver\\Receiver.csproj": {}
   },
   "projects": {
-    "D:\\BootCamp\\review-case-s22b7\\Receiver\\Receiver\\Receiver.csproj": {
+    "C:\\Users\\HP\\Desktop\\Git_CaseStudy_Final\\review-case-s22b7\\Receiver\\Receiver\\Receiver.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\BootCamp\\review-case-s22b7\\Receiver\\Receiver\\Receiver.csproj",
+        "projectUniqueName": "C:\\Users\\HP\\Desktop\\Git_CaseStudy_Final\\review-case-s22b7\\Receiver\\Receiver\\Receiver.csproj",
         "projectName": "Receiver",
-        "projectPath": "D:\\BootCamp\\review-case-s22b7\\Receiver\\Receiver\\Receiver.csproj",
-        "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-        "outputPath": "D:\\BootCamp\\review-case-s22b7\\Receiver\\Receiver\\obj\\",
+        "projectPath": "C:\\Users\\HP\\Desktop\\Git_CaseStudy_Final\\review-case-s22b7\\Receiver\\Receiver\\Receiver.csproj",
+        "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\HP\\Desktop\\Git_CaseStudy_Final\\review-case-s22b7\\Receiver\\Receiver\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

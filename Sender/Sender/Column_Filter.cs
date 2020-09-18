@@ -1,33 +1,32 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 
 namespace Sender
 {
-    public class Column_Filter
+    public class ColumnFilter
     {
-        public static void ApplyColumnFilter(string line, int startcolumn, int stopcolumn)
+        public static string[] ApplyColumnFilter(string line, int startcolumn, int stopcolumn)
         {
             string[] columns = line.Split(',');
             for (int columnNumber = startcolumn; columnNumber < stopcolumn; columnNumber++)
             {
                 string reviewComment = columns[columnNumber];
 
-                string[] words = ConvertLineToSeriesOfWords.ConvertLine_ToSeriesOfWords(reviewComment);
-
+                string[] words = ConvertLineToTheSeriesOfWords.ConvertLineToSeriesOfWords(reviewComment);
                 foreach (var word in words)
                 {
                     System.Console.WriteLine(word);
+
                 }
+
             }
+            return columns;//Test
+
         }
     }
 
-    public class ConvertLineToSeriesOfWords
+    public class ConvertLineToTheSeriesOfWords
     {
-        public static string[] ConvertLine_ToSeriesOfWords(string reviewComment)
+        public static string[] ConvertLineToSeriesOfWords(string reviewComment)
         {
             string[] words = reviewComment.Split(' ');
             return words;

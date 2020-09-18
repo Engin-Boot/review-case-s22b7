@@ -10,11 +10,9 @@ namespace Receiver
         {
             try
             {
-                using (StreamWriter file = new StreamWriter(path, false))
-                {
-                    foreach (var item in record)
-                        file.WriteLine(item.Key + "," + item.Value);
-                }
+                using StreamWriter file = new StreamWriter(path, false);
+                foreach (var item in record)
+                    file.WriteLine(item.Key + "," + item.Value);
             }
             catch (Exception e)
             {

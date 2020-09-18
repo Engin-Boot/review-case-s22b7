@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30413.136
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sender", "Sender\Sender.csproj", "{BD0FBD98-0261-4A6D-AD64-07B55A631D9E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sender_Test", "Sender_Test\Sender_Test.csproj", "{D4773D7A-099C-410C-BB74-8EFC4A382DC6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SenderTest", "Sender_Test\SenderTest.csproj", "{D4773D7A-099C-410C-BB74-8EFC4A382DC6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
