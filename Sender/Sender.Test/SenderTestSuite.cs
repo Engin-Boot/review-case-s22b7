@@ -1,4 +1,3 @@
-using Sender;
 using Xunit;
 
 namespace Sender.Test
@@ -17,15 +16,15 @@ namespace Sender.Test
         public void TestWhenColumnNumberIsGivenThenReturnStartStopColumnNumber()
         {
             int startNum, stopNum;
-            StartStopColumnNumbers.ReturnStartAndStopColumnNumbers(1, 2,out startNum,out stopNum);
-                Assert.True(startNum == 0 && stopNum == 1);
+            StartStopColumnNumbers.ReturnStartAndStopColumnNumbers(1, 2, out startNum, out stopNum);
+            Assert.True(startNum == 0 && stopNum == 1);
         }
 
         [Fact]
         public void TestWhenCommentIsGivenAsInputReturnSeriesOfWords()
         {
             string Comment = "No new Comment";
-            Assert.Equal("new",Column_Filter.BreakLineToItems(Comment, ' ')[1]);
+            Assert.Equal("new", Column_Filter.BreakLineToItems(Comment, ' ')[1]);
         }
     }
 }
