@@ -24,20 +24,20 @@ namespace SenderTest
             Assert.True(PathExistance.CheckPathExistOrNot(path1));
         }
 
-        [Fact]
-        public void TestWhenColumnNumberIsGivenThenReturnStartStopColumnNumber()
-        {
-            //column1
-            int[] startStopColumnNumber = StartStopColumnNumbers.ReturnStartAndStopColumnNumbers(1, 2);
-            Assert.True(startStopColumnNumber[0] == 0 && startStopColumnNumber[1] == 1);
-            //column2
-            int[] startStopColumnNumber1 = StartStopColumnNumbers.ReturnStartAndStopColumnNumbers(2, 2);
-            Assert.True(startStopColumnNumber1[0] == 1 && startStopColumnNumber1[1] == 2);
-            //complete csv file both columns
-            int[] startStopColumnNumber2 = StartStopColumnNumbers.ReturnStartAndStopColumnNumbers(0, 2);
-            Assert.True(startStopColumnNumber2[0] == 0 && startStopColumnNumber2[1] == 2);
+        //[Fact]
+        //public void TestWhenColumnNumberIsGivenThenReturnStartStopColumnNumber()
+        //{
+        //    //column1
+        //    int[] startStopColumnNumber = StartStopColumnNumbers.ReturnStartAndStopColumnNumbers(1, 2);
+        //    Assert.True(startStopColumnNumber[0] == 0 && startStopColumnNumber[1] == 1);
+        //    //column2
+        //    int[] startStopColumnNumber1 = StartStopColumnNumbers.ReturnStartAndStopColumnNumbers(2, 2);
+        //    Assert.True(startStopColumnNumber1[0] == 1 && startStopColumnNumber1[1] == 2);
+        //    //complete csv file both columns
+        //    int[] startStopColumnNumber2 = StartStopColumnNumbers.ReturnStartAndStopColumnNumbers(0, 2);
+        //    Assert.True(startStopColumnNumber2[0] == 0 && startStopColumnNumber2[1] == 2);
 
-        }
+        //}
 
         [Fact]
         public void TestWhenCommentIsGivenAsInputReturnSeriesOfWords()
