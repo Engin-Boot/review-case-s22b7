@@ -1,33 +1,36 @@
 ﻿using System;
-using System.IO;
 
 namespace Sender
 {
     public class SeriesOfWords
     {
-        public static void ConvertCommentsToSeriesOfWords(string path, string Column_Number)
+        public static string[] ConvertCommentsToSeriesOfWords(string path, string columnNumbers)
         {
 
-            int column_number = Convert.ToInt32(Column_Number);
+            int columnnumber = Convert.ToInt32(columnNumbers);
             string[] lines = System.IO.File.ReadAllLines(path);
-            LineLoop.ApplyLineLoop(lines, column_number);
+            LineLoop.ApplyLineLoop(lines, columnnumber);
+            return lines;//Test
         }
     }
 
     public class LineLoop
     {
-        public static void ApplyLineLoop(string[] lines, int column_number)
+        public static string ApplyLineLoop(string[] lines, int columnnumber)
         {
             for (int lineNumber = 1; lineNumber < lines.Length; lineNumber++)
             {
                 string line = lines[lineNumber];
                 string[] columns = line.Split(',');
                 int columnsCount = columns.Length;
-                int[] Start_StopColumnNumber = StartStopColumnNumbers.ReturnStartAndStopColumnNumbers(column_number, columnsCount);
-                int StartColumnNumber = Start_StopColumnNumber[0];
-                int StopColumnNumber = Start_StopColumnNumber[1];
-                Column_Filter.ApplyColumnFilter(line, StartColumnNumber, StopColumnNumber);
+
+                int[] startStopColumnNumber = StartStopColumnNumbers.ReturnStartAndStopColumnNumbers(columnnumber, columnsCount);
+                int startColumnNumber = startStopColumnNumber[0];
+                int stopColumnNumber = startStopColumnNumber[1];
+                ColumnFilter.ApplyColumnFilter(line, startColumnNumber, stopColumnNumber);
             }
+            string line1 = lines[0];//Test
+            return line1;
         }
     }
 }

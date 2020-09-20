@@ -9,7 +9,7 @@ namespace Receiver
         {
             string consoleEntry;
             List<String> consoleContent = new List<String>();
-            while (!string.IsNullOrEmpty(consoleEntry = Console.ReadLine()))
+            while ((consoleEntry = Console.ReadLine()) != null)
                 consoleContent.Add(consoleEntry);
             return consoleContent;
         }
@@ -20,8 +20,8 @@ namespace Receiver
             foreach (string word in wordlist)
             {
                 if (wordCount.ContainsKey(word))
-                      wordCount[word]++;
-                else  wordCount.Add(word, 1);
+                    wordCount[word]++;
+                else wordCount.Add(word, 1);
             }
             return wordCount;
         }

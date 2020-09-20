@@ -8,19 +8,25 @@
     </InspectionScope>
   </Information>
   <IssueTypes>
+    <IssueType Id="CheckNamespace" Category="Constraints Violations" CategoryId="ConstraintViolation" Description="Namespace does not correspond to file location" Severity="WARNING" WikiUrl="https://www.jetbrains.com/resharperplatform/help?Keyword=CheckNamespace" />
     <IssueType Id="ClassNeverInstantiated.Global" Category="Potential Code Quality Issues" CategoryId="CodeSmell" SubCategory="Class is never instantiated" Description="Class is never instantiated: Non-private accessibility" Severity="SUGGESTION" Global="True" WikiUrl="https://www.jetbrains.com/resharperplatform/help?Keyword=ClassNeverInstantiated.Global" />
+    <IssueType Id="RedundantUsingDirective" Category="Redundancies in Code" CategoryId="CodeRedundancy" Description="Redundant using directive" Severity="WARNING" WikiUrl="https://www.jetbrains.com/resharperplatform/help?Keyword=RedundantUsingDirective" />
   </IssueTypes>
   <Issues>
     <Project Name="Sender">
-      <Issue TypeId="ClassNeverInstantiated.Global" File="Sender\Column_Filter.cs" Offset="42-54" Line="5" Message="Class 'ColumnFilter' is never instantiated" />
-      <Issue TypeId="ClassNeverInstantiated.Global" File="Sender\Column_Filter.cs" Offset="728-757" Line="27" Message="Class 'ConvertLineToTheSeriesOfWords' is never instantiated" />
-      <Issue TypeId="ClassNeverInstantiated.Global" File="Sender\Column_Number.cs" Offset="57-69" Line="6" Message="Class 'ColumnNumber' is never instantiated" />
+      <Issue TypeId="ClassNeverInstantiated.Global" File="Sender\Column_Filter.cs" Offset="40-52" Line="4" Message="Class 'ColumnFilter' is never instantiated" />
+      <Issue TypeId="ClassNeverInstantiated.Global" File="Sender\Column_Filter.cs" Offset="726-755" Line="26" Message="Class 'ConvertLineToTheSeriesOfWords' is never instantiated" />
+      <Issue TypeId="ClassNeverInstantiated.Global" File="Sender\Column_Number.cs" Offset="55-67" Line="5" Message="Class 'ColumnNumber' is never instantiated" />
       <Issue TypeId="ClassNeverInstantiated.Global" File="Sender\CsvFileReader.cs" Offset="57-70" Line="6" Message="Class 'CsvFileReader' is never instantiated" />
       <Issue TypeId="ClassNeverInstantiated.Global" File="Sender\PathExistance.cs" Offset="73-86" Line="6" Message="Class 'PathExistance' is never instantiated" />
-      <Issue TypeId="ClassNeverInstantiated.Global" File="Sender\Sender.cs" Offset="35-41" Line="5" Message="Class 'Sender' is never instantiated" />
-      <Issue TypeId="ClassNeverInstantiated.Global" File="Sender\SeriesOfWords.cs" Offset="57-70" Line="6" Message="Class 'SeriesOfWords' is never instantiated" />
-      <Issue TypeId="ClassNeverInstantiated.Global" File="Sender\SeriesOfWords.cs" Offset="447-455" Line="18" Message="Class 'LineLoop' is never instantiated" />
+      <Issue TypeId="RedundantUsingDirective" File="Sender\Properties\AssemblyInfo.cs" Offset="26-64" Line="2" Message="Using directive is not required by the code and can be safely removed" />
+      <Issue TypeId="ClassNeverInstantiated.Global" File="Sender\Sender.cs" Offset="33-39" Line="4" Message="Class 'Sender' is never instantiated" />
+      <Issue TypeId="ClassNeverInstantiated.Global" File="Sender\SeriesOfWords.cs" Offset="55-68" Line="5" Message="Class 'SeriesOfWords' is never instantiated" />
+      <Issue TypeId="ClassNeverInstantiated.Global" File="Sender\SeriesOfWords.cs" Offset="445-453" Line="17" Message="Class 'LineLoop' is never instantiated" />
       <Issue TypeId="ClassNeverInstantiated.Global" File="Sender\StartStopColumnNumbers.cs" Offset="40-62" Line="4" Message="Class 'StartStopColumnNumbers' is never instantiated" />
+    </Project>
+    <Project Name="Sender_Test">
+      <Issue TypeId="CheckNamespace" File="Sender_Test\Sender_Test.cs" Offset="43-53" Line="5" Message="Namespace does not correspond to file location, should be: 'Sender_Test'" />
     </Project>
   </Issues>
 </Report>

@@ -1,15 +1,15 @@
 ﻿using System;
-using System.IO;
 
 namespace Sender
 {
-    public class Column_Number
+    public class ColumnNumber
     {
-        public static string TakeColumnNumberForColumnFilter(string UserInput)
+        public static string TakeColumnNumberForColumnFilter()
         {
             Console.WriteLine("Enter 1 for Date & Time column filter and 2 for Comments Column filter");
-            String ColumnNumber = Console.ReadLine();
-            return ColumnNumber;
+            String columnNumber = Console.ReadLine();
+
+            return columnNumber;
         }
 
     }

@@ -9,7 +9,7 @@ namespace Receiver.Test
     {
         readonly ReadConsoleHandler _reader = new ReadConsoleHandler();
         readonly CsvWriteHandler _writer = new CsvWriteHandler();
-        readonly string _fileName = "Example.csv";
+        readonly string fileName = "Example.csv";
         readonly Dictionary<string, int> _wordmap = new Dictionary<string, int>() { { "Hello", 2 }, { "Philips", 1 }, { "World", 2 } };
 
         [Fact]
@@ -22,9 +22,9 @@ namespace Receiver.Test
         [Fact]
         public void WhenFileArgumentIsHealthyThenCreateNewFile()
         {
-            _writer.FilePathGen(_fileName);
-            Assert.True(File.Exists(GetPath(_fileName)));
-            Assert.Equal(0, new FileInfo(GetPath(_fileName)).Length);
+            _writer.FilePathGen(fileName);
+            Assert.True(File.Exists(GetPath(fileName)));
+            Assert.Equal(0, new FileInfo(GetPath(fileName)).Length);
         }
         [Fact]
         public void WhenFileisCorruptedThenThrowException()
@@ -41,8 +41,8 @@ namespace Receiver.Test
         [Fact]
         public void WhenFileStreamSucceedsThenWriteOnFile()
         {
-            _writer.WriteToCsv(_wordmap, GetPath(_fileName));
-            Assert.Equal("Hello,2", File.ReadAllLines(GetPath(_fileName))[0]);
+            _writer.WriteToCsv(_wordmap, GetPath(fileName));
+            Assert.Equal("Hello,2", File.ReadAllLines(GetPath(fileName))[0]);
         }
         private static string GetPath(string fileName)
         {
